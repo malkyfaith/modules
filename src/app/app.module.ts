@@ -15,7 +15,7 @@ import { Module2Module } from './module2/module2.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CoreModule,
+    CoreModule.forRoot(),
     Module1Module,
     Module2Module
   ],

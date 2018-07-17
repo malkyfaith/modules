@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomService } from './services/custom.service';
 
@@ -7,7 +7,6 @@ import { CustomService } from './services/custom.service';
     CommonModule
   ],
   declarations: [],
-  providers: [CustomService]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -16,4 +15,10 @@ export class CoreModule {
         'CoreModule is already loaded. Import it in the AppModule only');
     }
   }
+  static forRoot(): ModuleWithProviders {
+    return {
+        ngModule: CoreModule,
+        providers: [CustomService]
+    };
+}
 }
