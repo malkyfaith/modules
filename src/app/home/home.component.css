@@ -1,0 +1,13 @@
+p {
+    border: 1px solid blue;
+}
+:host{
+    border: 2px solid green;
+    background: grey;
+}
+:host-context{
+    background-color: red;
+  }
+  .mystyle {
+      color: red;
+  }
