@@ -12,5 +12,6 @@ export class OtherComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.service.getData());
+    this.service.setData('updated by module2 other component');
   }
 }
